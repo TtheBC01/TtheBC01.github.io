@@ -1,2 +1,4 @@
-# website
-My personal website project. Ripped the idea off from [John Graham-Cumming](https://www.jgc.org). Hope to expand upon it. 
+# ToddChapman.io
+![Toddchapman.io](/browser-demo.gif)
+My personal website project. Ripped the idea off from [John Graham-Cumming](https://www.jgc.org). Added crypto support for wallets that inject the
+`window.ethereum` resource for fun. Thinking about adding a blockchain-based [BBS](https://en.wikipedia.org/wiki/Bulletin_board_system) feature. 
