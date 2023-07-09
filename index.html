@@ -49,6 +49,7 @@
       const github = "https://github.com/TtheBC01";
       const scholar = "https://scholar.google.com/citations?user=5O8AMFQAAAAJ&hl=en";
       const linkedin = "https://www.linkedin.com/in/todd-chapman/";
+      const twitter = "https://twitter.com/TtheBC01";
       const Y2K = "https://en.wikipedia.org/wiki/Year_2000_problem";
       const srcode = "https://github.com/TtheBC01/TtheBC01.github.io";
       const punk = "https://www.activism.net/cypherpunk/manifesto.html"
@@ -74,6 +75,7 @@
          document.getElementById("F3").setAttribute('href', scholar);
          document.getElementById("F4").setAttribute('href', cvlink);
          document.getElementById("F5").setAttribute('href', linkedin);
+         document.getElementById("F6").setAttribute('href', twitter);
          document.getElementById("Y2K").setAttribute('href', Y2K);
          document.getElementById("TAC").setAttribute('href', srcode);
          document.getElementById("TODD").setAttribute('href', srcode);
@@ -88,7 +90,7 @@
          if (k.keyCode >= 112 && k.keyCode <= 120) {
             var f = 'F' + (k.keyCode - 111);
             console.log(f);
-            if (f === 'F6') { // if user hits F6, request to connect to MetaMask
+            if (f === 'F8') { // if user hits F6, request to connect to MetaMask
                connect('true')
             } else { // otherwise, go to referenced link
                window.location = document.getElementById(f).href;
@@ -167,9 +169,7 @@
 |                                                                              |
 |       <a id="F1">SNICKERDOODLE LABS</a> CTO    <a id="F2">GITHUB</a>                <a id="F3">GOOGLE SCHOLAR</a>         |
 |                                                                              |
-|       <a id="F4">CV</a>                                                                     |
-|                                                                              |
-|       <a id="F5">LINKEDIN</a>                                                               |
+|       <a id="F4">CV</a> | <a id="F5">LINKEDIN</a> | <a id="F6">TWITTER</a>                                                |
 |                                                                              |
 |             +--------------------------------------------------+             |
 |                                                                              |
@@ -193,7 +193,7 @@
 |                                                                              |
 |                           COPYRIGHT (C) <a id="Y2K">19123</a> <a id="TAC">TAC</a>                            |
 +------------------------------------------------------------------------------+
-<span class="fn">F1</span> JOB <span class="fn">F2</span> GITHUB <span class="fn">F3</span> PAPERS <span class="fn">F4</span> CV <span class="fn">F5</span> LinkedIn <span class="fn">F6</span> <span class="showConnectivity">WALLET</span>
+<span class="fn">F1</span> JOB <span class="fn">F2</span> GITHUB <span class="fn">F3</span> PAPERS <span class="fn">F4</span> CV <span class="fn">F5</span> LinkedIn <span class="fn">F6</span> Twitter <span class="fn">F8</span> <span class="showConnectivity">WALLET</span>
 <span class="showAccount"></span>
     </pre>
    </center>
