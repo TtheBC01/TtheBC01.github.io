@@ -111,6 +111,15 @@
                            const decimalBal = parseInt(balance) / 1000000000000000000;
                            showAccount.innerHTML += decimalBal + '  CHAIN: ' + ethereum.networkVersion;
                         });
+                     const loginMessage = 'Hello Cyberworld!';
+                     const msg = `0x${Buffer.from(loginMessage, 'utf8').toString('hex')}`;
+                     ethereum.request({
+                        method: 'personal_sign',
+                        params: [msg, accounts[0]],
+                     }).then((sign) => {
+                        console.log("Signature:", sign);
+                     });
+                     console.log("Signature:",sign)
                   } else if (requestPerms === 'true') { // if not, request permission to view account details
                      showAccount.innerHTML = 'CONNECTING TO USER WALLET...';
                      ethereum.request({ method: 'eth_requestAccounts' })
