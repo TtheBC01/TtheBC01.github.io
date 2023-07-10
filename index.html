@@ -106,11 +106,7 @@
                   if (typeof accounts[0] !== 'undefined') {
                      showConnectivity.innerHTML = "CONNECTED"
                      setAccountLink(accounts[0])
-                     ethereum.request({ method: 'eth_getBalance', "params": [accounts[0], "latest"] })
-                        .then((balance) => {
-                           const decimalBal = parseInt(balance) / 1000000000000000000;
-                           showAccount.innerHTML += decimalBal + '  CHAIN: ' + ethereum.networkVersion;
-                        });
+                     requestBalance(accounts[0])
                   } else if (requestPerms === 'true') { // if not, request permission to view account details
                      showAccount.innerHTML = 'CONNECTING TO USER WALLET...';
                      ethereum.request({ method: 'eth_requestAccounts' })
@@ -119,13 +115,9 @@
                            showConnectivity.innerHTML = 'CONNECTED'
 
                            setAccountLink(account);
-                           ethereum.request({ method: 'eth_getBalance', "params": [account, "latest"] })
-                              .then((balance) => {
-                                 const decimalBal = parseInt(balance) / 1000000000000000000;
-                                 showAccount.innerHTML += decimalBal + '  CHAIN: ' + ethereum.networkVersion;;
-                              });
+                           requestBalance(account)
                            const loginMessage = 'Hello Cyberworld!';
-                           const msg = `0x${Buffer.from(loginMessage, 'utf8').toString('hex')}`;
+                           const msg = `0x${loginMessage.toString(16)}`;
                            ethereum.request({
                               method: 'personal_sign',
                               params: [msg, accounts[0]],
@@ -160,6 +152,14 @@
          tag.setAttribute('href', etherscanlink + account);
          tag.innerHTML = 'ACCOUNT: ' + account.slice(0, 6) + '...  BALANCE: ';
          showAccount.appendChild(tag);
+      }
+
+      function requestBalance(account) {
+         ethereum.request({ method: 'eth_getBalance', "params": [account, "latest"] })
+            .then((balance) => {
+               const decimalBal = parseInt(balance) / 1000000000000000000;
+               showAccount.innerHTML += decimalBal + '  CHAIN: ' + ethereum.networkVersion;;
+            });
       }
    </script>
 </head>
