@@ -1,0 +1,178 @@
+% define as an article class
+\documentclass[10pt]{article}
+
+% include proper packages
+\usepackage{parskip}
+\usepackage{mathpazo}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage{array, xcolor}
+\usepackage{soul}
+
+\usepackage[letterpaper, total={7in, 10in}]{geometry}
+
+\usepackage[backend=bibtex,maxbibnames=99]{biblatex}
+\addbibresource{publications.bib}
+
+\definecolor{lightgray}{gray}{0.8}
+\newcolumntype{L}{>{\raggedright}p{0.13\textwidth}}
+\newcolumntype{R}{p{0.85\textwidth}}
+\newcommand\VRule{\color{lightgray}\vrule width 0.5pt} 
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+	\textbf{\Large \textsc{Todd Chapman, PhD}}\\[5pt]
+	{\normalsize Palo Alto, CA 94306 \textbullet\ tac688@alumni.stanford.edu}
+\end{center}
+
+\footnotesize
+\section*{\sl \bfseries{\textsc{\large Education}}}
+
+\begin{tabular}{L!{\VRule}R}
+	\hspace{-1mm}{6/19} &{\textbf{Stanford University, Stanford, CA}} \\
+	&{Ph.D., Aeronautics and Astronautics} \\
+	&{Dissertation research on nonlinear model order reduction techniques for fluid and structural dynamics. Coursework on large scale optimization, computational mathematics, computer programming and aerospace engineering. } \\
+\end{tabular}
+
+\begin{tabular}{L!{\VRule}R}
+	\hspace{-1mm}{06/13} & {\textbf{Stanford University, Stanford, CA}} \\
+	& {M.S., Aeronautics and Astronautics} \\
+	&{Research on compression of rotational degrees of freedom for dynamic structural simulations and structure preserving hyper reduction techniques for the finite element method. Courses on mathematics, computer science, and optimal control.} \\
+\end{tabular}
+
+\begin{tabular}{L!{\VRule}R}
+	\hspace{-1mm}{05/11} & {\textbf{The University of Texas at Austin, Austin, TX}} \\
+	& {B.S., Aerospace Engineering (Honors)}\\
+	&{Comprehensive foundation in aeronautics and systems engineering. Undergraduate research on modeling planetary atmospheres in cooperation with NASA and the Texas Advanced Computing Center.} \\
+\end{tabular}
+
+\section*{\sl {\bfseries{\textsc{\large Professional Experience}}}}
+
+\begin{tabular}{>{\raggedright}L!{\VRule}R}
+	\hspace{-1mm}{5/22 - present} & {\textbf{Snickerdoodle Labs\textbullet\ CTO \textbullet\ Palo Alto, CA}} \\
+    & {\textbullet\ Design and implementation of blockchain protocol. } \\
+	& {\textbullet\ Set technical objectives and engineering road map. } \\
+	& {\textbullet\ Establish and lead intellectual property strategy. } \\
+	& {\textbullet\ Lead technical recruiting.} \\
+\end{tabular}
+
+\begin{tabular}{>{\raggedright}L!{\VRule}R}
+	\hspace{-1mm}{1/18 - 4/22} & {\textbf{Hypernet Labs\textbullet\ Co-Founder and CTO \textbullet\ Redwood City, CA}} \\
+	& {\textbullet\ Lead product development and software architecture.} \\
+	& {\textbullet\ Lead third-party software integrations and enterprise deployments. } \\
+	& {\textbullet\ Lead technical recruiting.} \\
+\end{tabular}
+
+\begin{tabular}{>{\raggedright}L!{\VRule}R}
+	\hspace{-1mm}{04/15 - 9/17} & {\textbf{Stanford Graduate Life Office\textbullet\ Head Community Associate \textbullet\ Stanford, CA}} \\
+	& {\textbullet\ Leadership position within the Office of the Dean of Graduate Life.} \\
+	& {\textbullet\ Establish appropriate budgets, programming, training exercises, and plan university-wide social events for over 3 000 Stanford graduate students from across multiple disciplines.} \\
+	& {\textbullet\ Lead new and returning Community Associates in their roles as visible leaders of the Stanford graduate community.} \\
+\end{tabular}
+
+\begin{tabular}{>{\raggedright}L!{\VRule}R}
+	\hspace{-1mm}{09/14 - 04/15} & {\textbf{Stanford Graduate Life Office\textbullet\ Community Associate \textbullet\ Stanford, CA}} \\
+	& {\textbullet\ Worked with the Office of the Dean of Graduate Life.} \\
+	& {\textbullet\ Led approximately ten social and community service events per quarter to foster community in the graduate residences.} \\
+\end{tabular}
+
+\begin{tabular}{>{\raggedright}L!{\VRule}R}
+	\hspace{-1mm}{2014 - 2017} & {\textbf{Army High Performance Computing Research Center \textbullet\ Instructor \textbullet\ Stanford, CA}} \\
+	& {\textbullet\ Taught class on parallel computing methods for undergraduates from four universities across the US.} \\
+	& {\textbullet\ Mentored undergraduate students (who were interested in national defense research and policy) during their summer computing projects.} \\
+\end{tabular}
+
+\begin{tabular}{>{\raggedright}L!{\VRule}R}
+	\hspace{-1mm}{06/11 - 08/11} & {\textbf{Texas Advanced Computing Center (TACC) \textbullet\ Student Researcher \textbullet\ Austin, TX}} \\
+	& {\textbullet\ Aided Principal Investigators in effectively using TACC's Visualization Laboratory.}
+\end{tabular}
+
+\begin{tabular}{>{\raggedright}L!{\VRule}R}
+	\hspace{-1mm}{03/10 - 08/11} & {\textbf{The University of Texas - Planetary Atmospheres Group \textbullet\ Student Researcher \textbullet\ Austin, TX}} \\
+	& {\textbullet\ Developed software for the 3D parametric simulation of the south polar plumes of the moon Enceladus.}\\
+	& {\textbullet\ Worked with graduate students to interpret results for the constraint of subterranean vent geometries.} \\
+\end{tabular}
+
+\begin{tabular}{>{\raggedright}L!{\VRule}R}
+	\hspace{-1mm}{06/09 - 08/09} & {\textbf{Applied Research Laboratories (ARL) \textbullet\ Research Intern \textbullet\ Austin, TX}} \\
+	& {\textbullet\ Initiated development of multi-language open source interface for ARL's GPS Toolkit.} \\
+\end{tabular}
+
+\begin{tabular}{>{\raggedright}L!{\VRule}R}
+	\hspace{-1mm}{05/08 - 09/08} & {\textbf{Uvalde Flight Center \textbullet\ Linesman \textbullet\ Uvalde, TX}} \\
+	& {\textbullet\ Operated aviation fuel trucks.} \\
+	& {\textbullet\ Responsible for hot-fueling Airlife medical helicopters.} \\
+	& {\textbullet\ Responsible for relocating private aircraft to hanger during inclement weather.} \\
+\end{tabular}
+
+\nocite{farhat2018vibration}
+\nocite{farhat2018stochastic}
+\nocite{chapman2016accelerated}
+\nocite{ECSW2}
+\nocite{ECSW1}
+\nocite{yeoh2015understanding}
+\nocite{chapman2019nonlinear}
+\nocite{chapman2021decentralized}
+\nocite{chapman2020decentralized}
+\nocite{chapman2021distributed}
+\nocite{chapman2022coordinated}
+\nocite{sibbach2022secure}
+\printbibliography[title={\sl \bfseries{\textsc{\large Publications \& Patents}}}]
+
+\section*{\sl {\bfseries{\textsc{\large Conference Proceedings}}}}
+
+\begin{itemize}
+\setlength{\itemsep}{0pt}
+    \item {International Conference of Water Management Modelling,\emph{Towards Scalable Parametric/Stochastic 2D Hydrodynamic Modeling via Process Containerization}. Virtual Conference, 2021}
+	\item {World Congress on Computational Mechanics, \emph{Projection-Based Dimensional Reduction of Nonlinear Structural Dynamics Models with Contact Surfaces}. New York, New York, July 2018}
+	\item {U.S. National Congress on Computational Mechanics, \emph{Sparse Subspace Clusering for Projection-Based Nonlinear Model Reduction}. Montreal, Canada, July 2017}
+	\item {European Congress on Computational Methods in Applied Sciences and Engineering, \emph{Hyper reduction of nonlinear finite element structural models with failure and contact}. Chersonisos, Greece, June 2016} 
+	\item 17th U.S. National Congress of Theoretical and Applied Mechanics, \emph{ECSW: An energy-based structure-preserving method for the hyper reduction of nonlinear finite element reduced-order models}. Lansing, Michigan, June 2014
+\end{itemize}
+
+\section*{\sl {\bfseries{\textsc{\large Honors \& Awards}}}}
+
+\subsection*{\sl \normalsize \underline{\smash{Professional}}}
+\begin{itemize}
+	\setlength{\itemsep}{0pt}
+	\setlength{\parskip}{0pt}
+	\item Selected for StartX Accelerator, 2020
+	\item Finalist in inaugural Army xTechSearch competition, 2018
+\end{itemize}
+
+\subsection*{\sl \normalsize \underline{\smash{Graduate}}} 
+\begin{itemize}
+	\setlength{\itemsep}{0pt}
+	\setlength{\parskip}{0pt}
+	\item Stanford Community Impact Award, Stanford Alumni Association 2018
+	\item Finalist in Robert J. Melosh Medal Competition, Duke University 2018
+	\item Best Instructor Award, Army High Performance Computing Research Center 2017
+	\item Stanford Summer Engineering and Technology Study Scholar, Middle East 2017
+	\item Accel Innovation Scholar, Stanford Technology Ventures Program 2016
+	\item National Defense Science and Engineering Graduate Fellowship, 2012
+\end{itemize}
+
+\subsection*{\sl \normalsize \underline{\smash{Undergraduate}}}
+\begin{itemize}
+	\setlength{\itemsep}{0pt}
+	\setlength{\parskip}{0pt}
+	\item Engineering Foundation Undergraduate Endowed Presidential Scholarship, 2010 	
+	\item Applied Research Laboratories Honors Scholar, 2009 
+	\item Dean's Honor List (every year) 
+\end{itemize}
+
+\section*{\sl {\bfseries{\textsc{\large Computer Skills}}}}
+\begin{itemize}
+	\setlength{\itemsep}{0pt}
+	\setlength{\parskip}{0pt}
+	\item Advanced programming skills \& extensive experience with C++, Fortran, Matlab, Python, R, Julia, LaTeX and Unix/Linux operating systems. 
+	\item Experienced in containerization, asynchronous programming, network programming, and design of parallel/distributed code bases
+    \item Smart contract development for Ethereum Virtual Machine platforms. 
+	\item Extensive experience developing high-performance scientific software for shared and distributed memory computer architectures. 
+\end{itemize}
+
+\end{document}

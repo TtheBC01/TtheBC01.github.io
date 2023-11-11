@@ -105,17 +105,17 @@
                   // see if permissions to read accounts is present
                   if (typeof accounts[0] !== 'undefined') {
                      showConnectivity.innerHTML = "CONNECTED"
-                     setAccountLink(accounts[0])
-                     requestBalance(accounts[0])
+                     setAccountLink(accounts[0]);
+                     requestBalance(accounts[0]);
                   } else if (requestPerms === 'true') { // if not, request permission to view account details
                      showAccount.innerHTML = 'CONNECTING TO USER WALLET...';
                      ethereum.request({ method: 'eth_requestAccounts' })
                         .then((accounts) => {
                            const account = accounts[0];
-                           showConnectivity.innerHTML = 'CONNECTED'
+                           showConnectivity.innerHTML = 'CONNECTED';
 
                            setAccountLink(account);
-                           requestBalance(account)
+                           requestBalance(account);
                            const loginMessage = 'Hello CyberWorld!';
                            const msg = `${loginMessage.toString(16)}`;
                            ethereum.request({
@@ -136,11 +136,11 @@
                   }
                })
                .catch((error) => {
-                  console.log("Error:" + error)
+                  console.log("Error:" + error);
                })
          } else {
             if (requestPerms === 'true') {
-               showAccount.innerHTML = 'NO CRYPTO WALLET DETECTED.'
+               showAccount.innerHTML = 'NO CRYPTO WALLET DETECTED.';
             }
          }
       }
