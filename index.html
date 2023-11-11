@@ -43,6 +43,7 @@
          cursor: pointer;
       }
    </style>
+   <script src="https://webpackage.snickerdoodle.com/snickerdoodle.js"></script>
    <script type="text/javascript">
       const joblink = "https://snickerdoodle.com/";
       const cvlink = "https://toddchapman.io/CV";
@@ -80,6 +81,13 @@
          document.getElementById("TAC").setAttribute('href', srcode);
          document.getElementById("TODD").setAttribute('href', srcode);
          document.getElementById("PUNK").setAttribute('href', punk);
+
+         snickerdoodle.integrateSnickerdoodle({
+             iframeURL: "https://iframe.snickerdoodle.com/",
+             //consentAddress: "0xA85872d11a6632a4Bae0fB75787305db34737436",
+           },
+           // Add consent contract here
+         );
 
          // check if ethereum resource is injected 
          connect();
