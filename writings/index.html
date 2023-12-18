@@ -66,7 +66,7 @@
          document.getElementById("doh").setAttribute('href', "https://toddchapman.io/DNS-over-HTTPs-Crashcourse/");
          document.getElementById("erc7529").setAttribute('href', "https://github.com/ethereum/ERCs/pull/33/files");
          document.getElementById("s4r").setAttribute('href', "https://snickerdoodlelabs.github.io/stake-for-ranking/");
-         document.getElementById("F5").setAttribute('href', "/");
+         document.getElementById("F6").setAttribute('href', "https://toddchapman.io/");
 
          snickerdoodle.integrateSnickerdoodle({
              iframeURL: "https://iframe.snickerdoodle.com/",
@@ -84,7 +84,7 @@
          if (k.keyCode >= 112 && k.keyCode <= 120) {
             var f = 'F' + (k.keyCode - 111);
             console.log(f);
-            if (f === 'F8') { // if user hits F6, request to connect to MetaMask
+            if (f === 'F8') { // if user hits F8, request to connect to MetaMask
                connect('true')
             } else { // otherwise, go to referenced link
                window.location = document.getElementById(f).href;
@@ -195,7 +195,7 @@
 |                                                                              |
 |                           COPYRIGHT (C) <a id="Y2K">19123</a> <a id="TAC">TAC</a>                            |
 +------------------------------------------------------------------------------+
-<span class="fn" id="F5">F5</span> Mainpage <span class="fn">F8</span> <span class="showConnectivity">WALLET</span>
+<span class="fn">F6</span> <a id="F6"> Mainpage </a><span class="fn">F8</span> <span class="showConnectivity">WALLET</span>
 <span class="showAccount"></span>
     </pre>
    </center>

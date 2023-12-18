@@ -99,7 +99,7 @@
          if (k.keyCode >= 112 && k.keyCode <= 120) {
             var f = 'F' + (k.keyCode - 111);
             console.log(f);
-            if (f === 'F8') { // if user hits F6, request to connect to MetaMask
+            if (f === 'F8') { // if user hits F8, request to connect to MetaMask
                connect('true')
             } else { // otherwise, go to referenced link
                window.location = document.getElementById(f).href;
