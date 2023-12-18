@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Todd Chapman, PhD</title>
+   <link rel="icon" type="image/x-icon" href="/favicon.ico">
+   <link rel="shortcut icon" href="/matrixpunk.jpg" />
+   <meta name="description" content="PhD in Aerospace Engineering. CTO at Snickerdoodle Labs.">
+   <meta name="keywords"
+      content="Todd Chapman, Blockchain, Model Order Reduction, Snickerdoodle Labs, Stanford, UT Austin">
+   <meta name="author" content="Todd Chapman">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style type="text/css">
+      body {
+         background-color: black;
+         color: #00ff33;
+      }
+
+      a[href] {
+         color: #00ff33;
+         text-decoration: none;
+      }
+
+      #green {
+         color: #00ff33;
+      }
+
+      .fn {
+         color: #046e27;
+         font-size: 12px;
+      }
+
+      .button {
+         background-color: black;
+         /* Green */
+         border: none;
+         color: #046e27;
+         text-align: center;
+         text-decoration: none;
+         display: inline-block;
+         font-size: 12px;
+         cursor: pointer;
+      }
+   </style>
+   <script src="https://webpackage.snickerdoodle.com/snickerdoodle.js"></script>
+   <script type="text/javascript">
+
+      const ETH = "1";
+      const RINKEBY = "4";
+      const AVAX = "43113";
+      const FUJI = "43114";
+
+      let showConnectivity;
+      let showAccount;
+      let etherscanlink = "https://etherscan.io/address/"
+
+      function init() {
+         document.onkeydown = f_keys;
+
+         showConnectivity = document.querySelector('.showConnectivity');
+         showAccount = document.querySelector('.showAccount');
+
+         // set hrefs in the body 
+         document.getElementById("cowpy").setAttribute('href', "https://toddchapman.io/cow.py");
+         document.getElementById("doh").setAttribute('href', "https://toddchapman.io/DNS-over-HTTPs-Crashcourse/");
+         document.getElementById("erc7529").setAttribute('href', "https://github.com/ethereum/ERCs/pull/33/files");
+         document.getElementById("s4r").setAttribute('href', "https://snickerdoodlelabs.github.io/stake-for-ranking/");
+         document.getElementById("F5").setAttribute('href', "/");
+
+         snickerdoodle.integrateSnickerdoodle({
+             iframeURL: "https://iframe.snickerdoodle.com/",
+             //consentAddress: "0xA85872d11a6632a4Bae0fB75787305db34737436",
+           },
+           // Add consent contract here
+         );
+
+         // check if ethereum resource is injected 
+         connect();
+      }
+
+      // map FKeys to hrefs
+      function f_keys(k) {
+         if (k.keyCode >= 112 && k.keyCode <= 120) {
+            var f = 'F' + (k.keyCode - 111);
+            console.log(f);
+            if (f === 'F8') { // if user hits F6, request to connect to MetaMask
+               connect('true')
+            } else { // otherwise, go to referenced link
+               window.location = document.getElementById(f).href;
+            }
+         }
+      }
+
+      function connect(requestPerms = "false") {
+         if (typeof window.ethereum !== 'undefined') {
+            ethereum.request({ method: 'eth_accounts' })
+               .then((accounts) => {
+                  // see if permissions to read accounts is present
+                  if (typeof accounts[0] !== 'undefined') {
+                     showConnectivity.innerHTML = "CONNECTED"
+                     setAccountLink(accounts[0]);
+                     requestBalance(accounts[0]);
+                  } else if (requestPerms === 'true') { // if not, request permission to view account details
+                     showAccount.innerHTML = 'CONNECTING TO USER WALLET...';
+                     ethereum.request({ method: 'eth_requestAccounts' })
+                        .then((accounts) => {
+                           const account = accounts[0];
+                           showConnectivity.innerHTML = 'CONNECTED';
+
+                           setAccountLink(account);
+                           requestBalance(account);
+                           const loginMessage = 'Hello CyberWorld!';
+                           const msg = `${loginMessage.toString(16)}`;
+                           ethereum.request({
+                              method: 'personal_sign',
+                              params: [msg, accounts[0]],
+                           }).then((sign) => {
+                              console.log("Signature:", sign);
+                           });
+                        })
+                        .catch((error) => {
+                           if (error.code === 4001) {
+                              // EIP-1193 userRejectedRequest error
+                              showAccount.innerHTML = 'WALLET CONNECTION REJECTED.';
+                           } else {
+                              showAccount.innerHTML = "ERROR: " + error;
+                           }
+                        });
+                  }
+               })
+               .catch((error) => {
+                  console.log("Error:" + error);
+               })
+         } else {
+            if (requestPerms === 'true') {
+               showAccount.innerHTML = 'NO CRYPTO WALLET DETECTED.';
+            }
+         }
+      }
+
+      function setAccountLink(account) {
+         showAccount.innerHTML = ""; // reset showAccount element
+         var tag = document.createElement('a');
+         tag.setAttribute('href', etherscanlink + account);
+         tag.innerHTML = 'ACCOUNT: ' + account.slice(0, 6) + '...  BALANCE: ';
+         showAccount.appendChild(tag);
+      }
+
+      function requestBalance(account) {
+         ethereum.request({ method: 'eth_getBalance', "params": [account, "latest"] })
+            .then((balance) => {
+               const decimalBal = parseInt(balance) / 1000000000000000000;
+               showAccount.innerHTML += decimalBal + '  CHAIN: ' + ethereum.networkVersion;;
+            });
+      }
+   </script>
+</head>
+
+<body onload="init();">
+   <center>
+      <pre>
++------------------------------------------------------------------------------+
+|                                                                              |
+|                                 <a id="TODD">TODD CHAPMAN</a>                                 |
+|                                 ============                                 |
+|                                                                              |
+|                                                                              |
+|                                 WRITINGS                                     |
+|                                 --------                                     |
+|                                                                              |
+|       <a id="cowpy">COW.PY</a>                    <a id="erc7529">ERC-7529</a>              <a id="doh">DoH CRASHCOURSE</a>        |
+|                                                                              |
+|       <a id="s4r">STAKE FOR RANKING</a>                                                      |
+|                                                                              |
+|             +--------------------------------------------------+             |
+|                                                                              |
+|                                  0100001001                                  |
+|                                10010100111011                                |
+|                               0011001110000010                               |
+|                              101110011010011100                              |
+|                             10000001101101000100                             |
+|                             01010100011100001001                             |
+|                             000   01000000   001                             |
+|                             10     010101     01                             |
+|                             10      1111      01                             |
+|                             <a id="PUNK">1        10        1</a>                             |
+|                             11      1001      01                             |
+|                              01000000  10011010                              |
+|                                 1001    0100                                 |
+|                                 101      001                                 |
+|                                  1110100010                                  |
+|                                   00010010                                   |
+|                                   01    00                                   |
+|                                                                              |
+|                           COPYRIGHT (C) <a id="Y2K">19123</a> <a id="TAC">TAC</a>                            |
++------------------------------------------------------------------------------+
+<span class="fn" id="F5">F5</span> Mainpage <span class="fn">F8</span> <span class="showConnectivity">WALLET</span>
+<span class="showAccount"></span>
+    </pre>
+   </center>
+</body>
+
+</html>
