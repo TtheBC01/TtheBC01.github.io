@@ -49,7 +49,7 @@
 
   <footer>
     <p>Copyright (C) Todd Chapman · <a href="https://github.com/TtheBC01/TtheBC01.github.io">Source</a></p>
-    <p class="fkeys">
+    <p class="fkeys" hidden>
       <span class="fn">F1</span> Building ·
       <span class="fn">F2</span> GitHub ·
       <span class="fn">F3</span> Papers ·
@@ -62,9 +62,18 @@
   </footer>
   <script>
     (function () {
-      if (!window.matchMedia('(min-width: 641px)').matches) return;
+      var mq = window.matchMedia('(min-width: 641px) and (hover: hover) and (pointer: fine)');
+      var fkeys = document.querySelector('.fkeys');
+
+      function updateFkeys() {
+        if (fkeys) fkeys.hidden = !mq.matches;
+      }
+
+      updateFkeys();
+      mq.addEventListener('change', updateFkeys);
 
       document.addEventListener('keydown', function (e) {
+        if (!mq.matches) return;
         if (e.keyCode >= 112 && e.keyCode <= 119) {
           var link = document.getElementById('F' + (e.keyCode - 111));
           if (link && link.href) window.location = link.href;
