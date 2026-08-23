@@ -429,6 +429,20 @@ footer a:visited {
   color: var(--text-color-alt);
 }
 
+.fkeys {
+  display: none;
+}
+
+.fn {
+  color: var(--text-color-alt);
+}
+
+@media screen and (min-width: 641px) {
+  .fkeys {
+    display: block;
+  }
+}
+
 /* CV page layout */
 body.cv-page {
   max-width: none;

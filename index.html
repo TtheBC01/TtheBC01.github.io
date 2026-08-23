@@ -30,14 +30,14 @@
   <nav>
     <h2>Contents</h2>
     <ul>
-      <li><a href="https://www.1shotapi.com/">Current Building</a></li>
-      <li><a href="https://github.com/TtheBC01">GitHub</a></li>
-      <li><a href="https://scholar.google.com/citations?user=5O8AMFQAAAAJ&amp;hl=en">Publications</a></li>
-      <li><a href="/CV/CV.pdf">CV</a></li>
-      <li><a href="https://www.linkedin.com/in/todd-chapman/">LinkedIn</a></li>
-      <li><a href="https://twitter.com/TtheBC01">X</a></li>
-      <li><a href="/writings/">Writings</a></li>
-      <li><a href="/load-bearing-links/">Load Bearing Links</a></li>
+      <li><a id="F1" href="https://www.1shotapi.com/">Current Building</a></li>
+      <li><a id="F2" href="https://github.com/TtheBC01">GitHub</a></li>
+      <li><a id="F3" href="https://scholar.google.com/citations?user=5O8AMFQAAAAJ&amp;hl=en">Publications</a></li>
+      <li><a id="F4" href="/CV/CV.pdf">CV</a></li>
+      <li><a id="F5" href="https://www.linkedin.com/in/todd-chapman/">LinkedIn</a></li>
+      <li><a id="F6" href="https://twitter.com/TtheBC01">X</a></li>
+      <li><a id="F7" href="/writings/">Writings</a></li>
+      <li><a id="F8" href="/load-bearing-links/">Load Bearing Links</a></li>
     </ul>
   </nav>
 
@@ -49,6 +49,28 @@
 
   <footer>
     <p>Copyright (C) Todd Chapman · <a href="https://github.com/TtheBC01/TtheBC01.github.io">Source</a></p>
+    <p class="fkeys">
+      <span class="fn">F1</span> Building ·
+      <span class="fn">F2</span> GitHub ·
+      <span class="fn">F3</span> Papers ·
+      <span class="fn">F4</span> CV<br>
+      <span class="fn">F5</span> LinkedIn ·
+      <span class="fn">F6</span> X ·
+      <span class="fn">F7</span> Writings ·
+      <span class="fn">F8</span> Links
+    </p>
   </footer>
+  <script>
+    (function () {
+      if (!window.matchMedia('(min-width: 641px)').matches) return;
+
+      document.addEventListener('keydown', function (e) {
+        if (e.keyCode >= 112 && e.keyCode <= 119) {
+          var link = document.getElementById('F' + (e.keyCode - 111));
+          if (link && link.href) window.location = link.href;
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
